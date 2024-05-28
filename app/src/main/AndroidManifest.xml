@@ -22,6 +22,8 @@
             android:exported="false" />
         <activity android:name=".DietActivity"
             android:exported="false" />
+        <activity android:name=".DietManagementActivity"
+            android:exported="false" />
 
     </application>
 
