@@ -8,6 +8,10 @@
         android:icon="@drawable/ic_health"
         android:title="健康" />
     <item
+        android:id="@+id/nav_diet"
+        android:icon="@drawable/ic_diet"
+        android:title="饮食" />
+    <item
         android:id="@+id/nav_exercise"
         android:icon="@drawable/ic_exercise"
         android:title="锻炼" />

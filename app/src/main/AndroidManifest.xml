@@ -20,11 +20,16 @@
 
         <activity android:name=".WorkoutActivity"
             android:exported="false" />
-        <activity android:name=".DietActivity"
+        <activity android:name=".weight_health_Activity"
             android:exported="false" />
         <activity android:name=".DietManagementActivity"
             android:exported="false" />
-
+        <activity android:name=".SetGoalActivity"
+            android:exported="false" />
+        <activity android:name=".MineActivity"
+            android:exported="false" />
+        <activity android:name=".RegisterActivity" android:exported="false" />
+        <activity android:name=".LoginActivity" android:exported="false" />
     </application>
 
 </manifest>

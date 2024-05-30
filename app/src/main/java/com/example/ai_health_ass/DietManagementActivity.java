@@ -1,7 +1,10 @@
 package com.example.ai_health_ass;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -9,7 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.HashMap;
 
@@ -84,6 +90,41 @@ public class DietManagementActivity extends AppCompatActivity {
                 addFoodToCategory(dinnerList, DatabaseHelper.TABLE_DINNER);
             }
         });
+
+        // 初始化 BottomNavigationView
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.nav_discover) {
+                    // 发现页面跳转
+                    Intent intent = new Intent(DietManagementActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    return true;
+                } else if (itemId == R.id.nav_health) {
+                    // 健康页面跳转
+                    Intent intent = new Intent(DietManagementActivity.this, weight_health_Activity.class);
+                    startActivity(intent);
+                    return true;
+                } else if (itemId == R.id.nav_diet) {
+                    // 跳转到饮食管理页面
+                    return true;
+                } else if (itemId == R.id.nav_exercise) {
+                    // 锻炼页面跳转
+                    Intent intent = new Intent(DietManagementActivity.this, WorkoutActivity.class);
+                    startActivity(intent);
+                    return true;
+                } else if (itemId == R.id.nav_mine) {
+                    // 我的页面跳转
+                    Intent intent = new Intent(DietManagementActivity.this, MineActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
     /**
@@ -128,7 +169,9 @@ public class DietManagementActivity extends AppCompatActivity {
                 imageView.setImageResource(foodImage);
             } else {
                 Toast.makeText(this, "列索引无效", Toast.LENGTH_SHORT).show();
+                Log.e("DietManagementActivity", "Invalid column index");
             }
+            cursor.close();
         }
     }
 
@@ -162,7 +205,9 @@ public class DietManagementActivity extends AppCompatActivity {
                 }
             } else {
                 Toast.makeText(this, "列索引无效", Toast.LENGTH_SHORT).show();
+                Log.e("DietManagementActivity", "Invalid column index");
             }
+            cursor.close();
         }
     }
 

@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">ai_health_ass</string>
+    <string name="app_name">AI Health Assistant</string>
+    <string-array name="activity_types">
+        <item>有氧运动</item>
+        <item>无氧运动</item>
+        <item>瑜伽</item>
+        <item>力量训练</item>
+        <item>伸展运动</item>
+    </string-array>
 </resources>

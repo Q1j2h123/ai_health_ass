@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="8dp"
-    android:background="@drawable/rounded_white_background">
+    android:background="@drawable/rounded_white_background"
+    android:elevation="4dp">
 
     <ImageView
         android:id="@+id/food_image"
